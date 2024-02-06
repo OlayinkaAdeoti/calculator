@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>newcalc</title>
+    <style>
+        input {
+            width: 20%;
+            padding: 10px 30px;
+            margin-bottom: 10px;
+            align-items: center;
+        }
+        button {
+            width: 48px;
+            height: 48px;
+            font-size: 18px;
+            margin: 5px;
+            border-radius: 20px;
+            border: none;
+            background-color: rgb(214, 192, 192);
+            color: rgb(8, 7, 7);
+        }
+    </style>
+</head>
+<body>
+    <input type="text" class="display" raadonly>
+    <br><br>
+    <button onclick="
+     appToDisplay('1') 
+    ">1</button>
+     <button onclick="
+     appToDisplay('2') 
+     ">2</button>
+      <button onclick="
+     appToDisplay('3') 
+    ">3</button>
+    <button onclick="
+    appToDisplay('+') 
+   ">+</button>
+    <br>
+     <button onclick="
+     appToDisplay('4') 
+     ">4</button>
+      <button onclick="
+     appToDisplay('5') 
+      ">5</button>
+       <button onclick="
+     appToDisplay('6') 
+       ">6</button>
+       <button onclick="
+       appToDisplay('-') 
+      ">-</button>
+       <br>
+        <button onclick="
+     appToDisplay('7') 
+        ">7</button>
+    <button onclick="
+     appToDisplay('8') 
+    ">8</button>
+    <button onclick="
+     appToDisplay('9') 
+    ">9</button>
+    <button onclick="
+    appToDisplay('*') 
+   ">*</button>
+          <br>
+    <button onclick="
+     appToDisplay('0') 
+    ">0</button>
+    <button onclick="
+    clearDisplay()   
+     ">C</button>
+    <button onclick="
+    appToDisplay('/')
+    ">/</button>
+    <button onclick="
+    calculateResult()
+    ">=</button>
+
+    <script>
+     function appToDisplay(value) {
+     document.querySelector('.display').value += value; 
+     }
+
+     function clearDisplay() {
+        document.querySelector('.display').value = '';
+     }
+     function calculateResult() {
+        try {
+        document.querySelector('.display'). value = eval(document.querySelector('.display').value) 
+          } catch (error) {
+            document.querySelector('.display').value = 'Error';
+          }
+     }
+    </script>
+</body>
+</html>
